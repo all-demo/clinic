@@ -1,0 +1,26 @@
+{
+  "name": "clinic",
+  "version": "0.1.0",
+  "description": "一款 Node.js 性能诊断工具，可以非常快速地定位性能问题",
+  "main": "index.js",
+  "scripts": {
+    "kill": "lsof -i:3000 | grep node | awk '{ print $2 }' | xargs kill",
+    "doctor": "clinic doctor -- node ./src/index.js",
+    "autocannon": "autocannon -c 100 -d 20 http://localhost:3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/all-demo/clinic.git"
+  },
+  "keywords": [],
+  "author": "shangwfa <shangwfa@126.com> (http://github.com/shangwfa)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/all-demo/clinic/issues"
+  },
+  "homepage": "https://github.com/all-demo/clinic#readme",
+  "dependencies": {
+    "autocannon": "^6.5.0",
+    "clinic": "^8.0.1"
+  }
+}
